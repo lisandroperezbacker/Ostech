@@ -2,7 +2,7 @@
 
 Este proyecto es una página web de comercio electrónico desarrollada para un negocio llamado **Ostech**, orientado a la venta de productos en línea.
 
-![Logo de Ostech]((https://github.com/lisandroperezbacker/Ostech/blob/aa057cc2ca89e73e4a63b3e05116cc180a879eb2/ostech%20yami/resours/Logo/ostechlogoFinal-transparente.png))
+![Logo de Ostech](https://github.com/lisandroperezbacker/Ostech/blob/aa057cc2ca89e73e4a63b3e05116cc180a879eb2/ostech%20yami/resours/Logo/ostechlogoFinal-transparente.png)
 
 ## Descripción
 
