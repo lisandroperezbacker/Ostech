@@ -1,0 +1,243 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo general del contenedor */
+  .contenedor {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+  }
+  
+  /* Columnas izquierda y derecha */
+  .izquierda, .derecha {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Izquierda */
+  .izquierda {
+    background-color: #000407;
+  }
+  
+  /* Derecha */
+  .derecha {
+    background-image: url('./resours/set.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .contenedor {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .izquierda, .derecha {
+      flex: unset;
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+  
+    .logo-img {
+      width: 70%;
+      margin: 0 auto;
+    }
+  
+    .card {
+      width: 100%;
+      max-width: 350px;
+    }
+  
+    .animated-button {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+  }
+  
+  /* Estilos del logo */
+  .logo-img {
+    margin-top: 0;
+    padding-top: 0;
+    display: block;
+    margin-left: -20px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Tarjeta */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 22rem;
+  }
+  
+  /* Inputs */
+  .inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .inputField {
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: black;
+    font-weight: 500;
+    font-size: 0.9rem;
+    outline: none;
+    caret-color: rgb(155, 78, 255);
+    transition-duration: 0.3s;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .userIcon {
+    position: absolute;
+    fill: rgb(155, 78, 255);
+    width: 10px;
+    top: -20px;
+    left: -15px;
+    opacity: 0;
+    transition: 0.2s linear;
+  }
+  
+  .usernameLabel {
+    position: absolute;
+    top: -23px;
+    left: 5px;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    transition: 0.2s linear;
+    opacity: 0;
+  }
+  
+  .inputField:focus ~ .usernameLabel,
+  .inputField:valid ~ .usernameLabel {
+    transform: translateX(16px);
+    opacity: 1;
+  }
+  
+  .inputField:focus ~ .userIcon,
+  .inputField:valid ~ .userIcon {
+    transform: translateX(16px);
+    opacity: 1;
+  }
+  
+  .inputField:focus,
+  .inputField:valid {
+    background-color: #ddd;
+    transition-duration: 0.3s;
+  }
+  
+  /* Botón animado */
+  .animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 28px;
+    border: 3px solid transparent;
+    font-size: 14px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #ffffff;
+    box-shadow: 0 0 0 1.5px #00bcd4;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button svg {
+    position: absolute;
+    width: 20px;
+    fill: #ffffff;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 12px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -30%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #00bcd4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #ffffff;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #ffffff;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px #00bcd4;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+  
